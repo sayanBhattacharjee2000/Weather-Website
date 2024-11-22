@@ -126,6 +126,7 @@ function showWeatherDetails(value, tvalue) {
             document.querySelector(".main").style.color = "black";
             document.querySelector("#temp").style.color = "black";
             document.querySelector(".sec").style.color = "black";
+            document.querySelector(".search .icon a").style.color = "black";
             animationOfBody(); 
             animationOf_bodyText();
             animationOfTime();
@@ -152,6 +153,7 @@ function showWeatherDetails(value, tvalue) {
             document.querySelector(".main").style.color = "white";
             document.querySelector("#temp").style.color = "white";
             document.querySelector(".sec").style.color = "white";
+            document.querySelector("#greet").style.color = "black";
             animationOfBody(); 
             animationOf_bodyText();
             animationOfTime();
@@ -302,6 +304,6 @@ breakpoints.add("(max-width: 580px)", () => {
   });
 });
 
-// document.addEventListener("contextmenu", function(e){
-//   e.preventDefault();
-// })
+document.addEventListener("contextmenu", function(e){
+  e.preventDefault();
+})
