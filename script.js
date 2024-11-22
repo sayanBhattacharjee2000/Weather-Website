@@ -1,4 +1,3 @@
-
 let now = new Date();
 let hour = now.getHours();
 let minute = now.getMinutes();
@@ -306,5 +305,3 @@ breakpoints.add("(max-width: 580px)", () => {
 document.addEventListener("contextmenu", function(e){
   e.preventDefault();
 })
-
-
