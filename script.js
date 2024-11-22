@@ -36,8 +36,33 @@ document.getElementById("date").innerText = date;
 document.getElementById("time").innerText = time;
 document.getElementById("greet").innerText = greeting;
 
-document.getElementById("btn").addEventListener("click", function() {
-    const city = document.getElementById("city").value;
+document.querySelector(".search-and-icon #btn").addEventListener("click", function() {
+    const city = document.querySelector(".search-and-icon #city").value;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=cf65d0c5f5cfffb9e7c92e59ec5e2e80`;
+    document.getElementById("invalid").style.display = "none";
+
+    fetch(url).then((response) => response.json()).then((value) => {
+        if (!value.length) throw new Error("Invalid city");
+
+        const lat = value[0]["lat"];
+        const lon = value[0]["lon"];
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=cf65d0c5f5cfffb9e7c92e59ec5e2e80`;
+
+        return fetch(weatherUrl).then((res) => res.json()).then((tvalue) => {
+            showWeatherDetails(value, tvalue);
+        });
+    }).catch(() => {
+        document.getElementById("invalid").style.display = "flex";
+        document.getElementById("layout").style.display = "none";
+        document.getElementById("city").style.display = "none";
+        document.getElementById("btn").style.display = "none";
+        document.querySelector('.background-clip').style.display = 'block';
+        document.body.style.backgroundColor = "black";
+    });
+});
+
+document.querySelector(".for-small-search-and-icon #btn").addEventListener("click", function() {
+    const city = document.querySelector(".for-small-search-and-icon #city").value;
     const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=cf65d0c5f5cfffb9e7c92e59ec5e2e80`;
     document.getElementById("invalid").style.display = "none";
 
