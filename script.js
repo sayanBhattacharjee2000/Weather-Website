@@ -302,6 +302,6 @@ breakpoints.add("(max-width: 580px)", () => {
   });
 });
 
-document.addEventListener("contextmenu", function(e){
-  e.preventDefault();
-})
+// document.addEventListener("contextmenu", function(e){
+//   e.preventDefault();
+// })
