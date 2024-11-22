@@ -7,7 +7,7 @@
 }
 
 body{
-    /* background-image: url("./good_evening.jpg"); */
+    /* background-image: url("good_evening.jpg"); */
     background-position: center;
     background-size: cover;
     overflow-y: auto;
@@ -50,7 +50,6 @@ body{
 
 .header .search .icon a{
     font-size: 1.5rem;
-    /* color: rgb(175, 175, 2); */
     font-weight: 500;
     color: rgb(255, 255, 255);
     
@@ -227,6 +226,9 @@ body{
     font-size: 5rem;
     text-align: center;
     color: bisque;
+    box-shadow: rgba(88, 82, 171, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
 }
 
 .invalid button {
@@ -334,6 +336,9 @@ body{
         font-size: 1rem;
         padding: 1rem 0.5rem;
     }
+    .invalid div {
+        font-size: 3rem;
+    }
 }
 
 @media(max-width: 445px){
@@ -365,6 +370,9 @@ body{
         font-size: 1rem;
         padding: 0.9rem 0.45rem;
     }
+    .invalid div {
+        font-size: 2.5rem;
+    }
 }
 
 @media(max-width: 325px){
@@ -381,5 +389,8 @@ body{
     .search input::placeholder{
         font-size: 1rem;
         color: #212121;
+    }
+    .invalid div {
+        font-size: 2rem;
     }
 }
